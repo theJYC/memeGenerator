@@ -5,8 +5,10 @@ import MemeGenerator from "./components/MemeGenerator"
 
 const App = () => {
   return (
-    <Header />
-    <MemeGenerator />
+    <>
+      <Header />
+      <MemeGenerator />
+    </>
   )
 }
 
