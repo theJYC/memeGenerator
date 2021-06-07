@@ -12,10 +12,13 @@ class MemeGenerator extends React.Component {
             randomImg : "http://i.imgflip.com/1bij.jpg",
             allMemeImgs : []
         }
-        this.handleChange = this.handleChange.bind(this)
+        // this.handleChange = this.handleChange.bind(this)
 
-        //binding is necessary for "this" to work in the callback
-        this.handleSubmit = this.handleSubmit.bind(this)
+        // binding is necessary for "this" to work in the callback
+        // update: using arrow syntax to declare class method
+        // gives it an implicit "this" context, meaning binding is no longer necessary :)
+
+        // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -29,7 +32,7 @@ class MemeGenerator extends React.Component {
     }
 
     //handleChange is going to be equipped with default event parameter:
-    handleChange(event) {
+    handleChange = event => {
         let { name, value } = event.target
 
         this.setState(
@@ -40,7 +43,7 @@ class MemeGenerator extends React.Component {
     }
 
     //class method that is invoked onSubmit of form element
-    handleSubmit(event) {
+    handleSubmit = event => {
         //since form is submitted, event.preventDefault is called so that the page is not refreshed:
         event.preventDefault()
 
